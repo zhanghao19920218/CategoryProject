@@ -3,6 +3,32 @@
 //
 #include "qq_music_model.h"
 
+void from_json(const nlohmann::json& j,MusicLysicModel& musicLysicModel)
+{
+    j.at("lyric").get_to<std::string>(musicLysicModel.lysic);
+}
+
+void from_json(const nlohmann::json& j,MusicLysicResponse& musicLysicResponse)
+{
+    j.at("data").get_to<MusicLysicModel>(musicLysicResponse.data);
+}
+
+void from_json(const nlohmann::json& j,MusicLysicSongIdModel& musicLysicSongIdModel)
+{
+    j.at("lyric").get_to<std::string>(musicLysicSongIdModel.lyric);
+    j.at("songmid").get_to<std::string>(musicLysicSongIdModel.songmid);
+}
+
+void from_json(const nlohmann::json& j,MusicLysicSongModel& musicLysicSongModel)
+{
+    j.at("list").get_to<std::vector<MusicLysicSongIdModel>>(musicLysicSongModel.list);
+}
+
+void from_json(const nlohmann::json& j,MusicLysicSongResponse& musicLysicSongResponse)
+{
+    j.at("data").get_to<MusicLysicSongModel>(musicLysicSongResponse.data);
+}
+
 void from_json(const nlohmann::json& j,CompanyModel& companyModel)
 {
     j.at("data").get_to<std::vector<std::string>>(companyModel.data);

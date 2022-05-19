@@ -3,6 +3,7 @@
 #include "movie_request_api.h"
 #include "company_request_api.h"
 #include "config_reader.h"
+#include "music_lysic_request_api.h"
 
 using namespace std;
 
@@ -35,6 +36,7 @@ void runShell()
 }
 
 int main() {
-    runShell();
+//    runShell();
+    requestAllMusic();
     return EXIT_SUCCESS;
 }

@@ -14,6 +14,39 @@ inline bool instanceof(const T ptr, const Base ptr2) {
     return typeid(ptr) == typeid(ptr2);
 };
 
+
+// 歌词的Model
+struct MusicLysicModel {
+    std::string lysic;
+};
+
+void from_json(const nlohmann::json& j,MusicLysicModel& musicLysicModel);
+
+struct MusicLysicResponse {
+    MusicLysicModel data;
+};
+
+void from_json(const nlohmann::json& j,MusicLysicResponse& musicLysicResponse);
+
+struct MusicLysicSongIdModel {
+    std::string lyric;
+    std::string songmid;
+};
+
+void from_json(const nlohmann::json& j,MusicLysicSongIdModel& musicLysicSongIdModel);
+
+struct MusicLysicSongModel {
+    std::vector<MusicLysicSongIdModel> list;
+};
+
+void from_json(const nlohmann::json& j,MusicLysicSongModel& musicLysicSongModel);
+
+struct MusicLysicSongResponse {
+    MusicLysicSongModel data;
+};
+
+void from_json(const nlohmann::json& j,MusicLysicSongResponse& musicLysicSongResponse);
+
 // 学校机构的model
 struct CompanyModel {
     std::vector<std::string> data;
