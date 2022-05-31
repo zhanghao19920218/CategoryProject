@@ -65,7 +65,16 @@ enum CategoryType {
     CategoryMovie,
     CategoryMusic,
     CategoryCompany,
-    CategoryApp
+    CategoryApp,
+    CategoryMall
+};
+
+/**
+ * 商城类别
+ */
+enum MallType {
+    TMallType,
+    JDMallType
 };
 
 #endif //QQ_API_SCRIPT_CONSTANT_H

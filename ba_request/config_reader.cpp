@@ -51,6 +51,9 @@ CategoryType ConfigReader::getCategory() const {
         case 4:
             cateType = CategoryType::CategoryApp;
             break;
+        case 5:
+            cateType = CategoryType::CategoryMall;
+            break;
         default:
             cateType = CategoryType::CategoryCompany;
             break;

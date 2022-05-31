@@ -136,9 +136,13 @@ public:
             // 判断返回值是否是正常，不是就报错
             ret_value = static_cast<HTTP_STATUS>(ret);
             if (ret_value == HTTP_STATUS::SUCCESS) {
-                nlohmann::json j = nlohmann::json::parse(res->body);
-                from_json(j, response);
-                return response;
+                try {
+                    nlohmann::json j = nlohmann::json::parse(res->body);
+                    from_json(j, response);
+                    return response;
+                } catch (std::exception e) {
+                    ret_value = HTTP_STATUS::OTHER_ERROR;
+                }
             } else {
                 return response;
             }

@@ -7,10 +7,7 @@
 #include "http_error.h"
 #include "ba_request.h"
 #include "file_io.h"
-#include "amap_city_model.h"
-#include "request_api.h"
 #include <regex>
-#include "timer_loop.h"
 
 /**
  * 请求app列表

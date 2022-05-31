@@ -5,6 +5,7 @@
 #include "config_reader.h"
 #include "music_lysic_request_api.h"
 #include "app_request_api.h"
+#include "mall_words.h"
 
 using namespace std;
 
@@ -38,12 +39,15 @@ void runShell()
             request_apps(reader.appPlatform,
                          reader.appType);
             break;
+        case CategoryType::CategoryMall:
+            printInfo("商城搜索词获取");
+            request_malls();
+            break;
 
     }
 }
 
 int main() {
     runShell();
-
     return EXIT_SUCCESS;
 }
