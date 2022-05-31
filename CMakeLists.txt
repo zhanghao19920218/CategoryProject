@@ -27,7 +27,7 @@ if(OPENSSL_FOUND)
     message("OpenSSL libraries: ${OPENSSL_LIBRARIES}")
 endif()
 
-add_executable(category_script main.cpp ba_request/ba_request.cpp ba_request/qq_music_model.cpp ba_request/music_request_api.cpp ba_request/movie_request_api.cpp ba_request/amap_city_model.cpp ba_request/company_request_api.cpp ba_request/Chameleon.cpp ba_request/ConfigFile.cpp ba_request/config_reader.cpp ba_request/music_lysic_request_api.cpp)
+add_executable(category_script main.cpp ba_request/ba_request.cpp ba_request/qq_music_model.cpp ba_request/music_request_api.cpp ba_request/movie_request_api.cpp ba_request/amap_city_model.cpp ba_request/company_request_api.cpp ba_request/Chameleon.cpp ba_request/ConfigFile.cpp ba_request/config_reader.cpp ba_request/music_lysic_request_api.cpp ba_request/app_request_api.cpp)
 
 target_link_libraries(category_script PRIVATE nlohmann_json::nlohmann_json)  # project name must defined before the add_executable
 

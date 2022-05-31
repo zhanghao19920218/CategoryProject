@@ -24,6 +24,7 @@ BARequest &BARequest::share(SEARCHTYPE search_type) {
             instance.client->set_write_timeout(30, 0); // 5 seconds
             instance._searchType = search_type;
             break;
+        case SEARCHTYPE::APP:
         case SEARCHTYPE::COMPANY:
             instance.client = new httplib::Client(BASE_COMPANY_URL, COMPANY_PORT);
             instance.client->set_connection_timeout(5300000);

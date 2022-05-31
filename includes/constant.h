@@ -64,7 +64,8 @@ enum MOVIE_INFO_TYPE {
 enum CategoryType {
     CategoryMovie,
     CategoryMusic,
-    CategoryCompany
+    CategoryCompany,
+    CategoryApp
 };
 
 #endif //QQ_API_SCRIPT_CONSTANT_H

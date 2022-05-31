@@ -9,6 +9,7 @@
 void ConfigReader::readConfigFiles() {
     try {
         ConfigFile cf(fileName);
+        searchType = std::string(cf.Value("search_section", "search_type"));
 
         musicLoc = std::string(cf.Value("music_section", "location"));
 
@@ -19,7 +20,8 @@ void ConfigReader::readConfigFiles() {
         companyProvince = std::string(cf.Value("institution_section", "province"));
         companyType = std::string(cf.Value("institution_section", "searchType"));
 
-        searchType = std::string(cf.Value("search_section", "search_type"));
+        appPlatform = std::string(cf.Value("app_section", "platform"));
+        appType= std::string(cf.Value("app_section", "app_type"));
 
         std::cout << musicLoc << std::endl;
 
@@ -45,6 +47,9 @@ CategoryType ConfigReader::getCategory() const {
             break;
         case 2:
             cateType = CategoryType::CategoryMovie;
+            break;
+        case 4:
+            cateType = CategoryType::CategoryApp;
             break;
         default:
             cateType = CategoryType::CategoryCompany;

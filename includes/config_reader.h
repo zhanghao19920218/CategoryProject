@@ -21,6 +21,8 @@ public:
     std::string movieStartYear;
     std::string movieEndYear;
     std::string companyProvince;
+    std::string appPlatform;
+    std::string appType;
 private:
     void readConfigFiles();
 private:

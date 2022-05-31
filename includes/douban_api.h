@@ -9,7 +9,8 @@ enum SEARCHTYPE {
     DOUBAN,
     MUSIC,
     COMPANY,
-    CITY_NAMES
+    CITY_NAMES,
+    APP
 };
 
 enum DouBanApi {

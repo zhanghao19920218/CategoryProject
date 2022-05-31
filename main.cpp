@@ -4,6 +4,7 @@
 #include "company_request_api.h"
 #include "config_reader.h"
 #include "music_lysic_request_api.h"
+#include "app_request_api.h"
 
 using namespace std;
 
@@ -32,11 +33,17 @@ void runShell()
             printInfo("搜索音乐");
             request_qq_music(reader.getMusicType());
             break;
+        case CategoryType::CategoryApp:
+            printInfo("搜索应用");
+            request_apps(reader.appPlatform,
+                         reader.appType);
+            break;
+
     }
 }
 
 int main() {
-//    runShell();
-    requestAllMusic();
+    runShell();
+
     return EXIT_SUCCESS;
 }
